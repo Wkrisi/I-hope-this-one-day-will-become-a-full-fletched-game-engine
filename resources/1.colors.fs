@@ -24,7 +24,7 @@ void main()
 {
     // ambient
     float ambientStrength = 0.1;
-    vec3 ambient = ambientStrength * lightColor;
+    vec3 ambient = material.ambient * lightColor;
   	
     // diffuse 
     vec3 norm = normalize(Normal);
@@ -38,7 +38,8 @@ void main()
     vec3 reflectDir = reflect(-lightDir, norm);
     float spec = pow(max(dot(viewDir, norm), 0.0), shininess);
     vec3 specular = specularStrength * spec * lightColor;
-
+    
+    // result
     vec3 result = (ambient + diffuse + specular) * objectColor;
     FragColor = vec4(result, 1.0);
 } 
