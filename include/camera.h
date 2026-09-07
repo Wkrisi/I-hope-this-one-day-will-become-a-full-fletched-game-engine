@@ -106,8 +106,8 @@ public:
         Zoom -= (float)yoffset;
         if (Zoom < 0.1f)
             Zoom = 0.1f;
-        if (Zoom > 180.0f)
-            Zoom = 180.0f;
+        if (Zoom > 120.0f)
+            Zoom = 120.0f;
     }
 
 private:

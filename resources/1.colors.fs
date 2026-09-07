@@ -1,4 +1,14 @@
 #version 330 core
+struct Material
+{
+  vec3 ambient; 
+  vec3 diffuse;
+  vec3 specular;
+  float shininess;
+};
+
+uniform Material material;
+
 out vec4 FragColor;
 
 in vec3 Normal;  
@@ -14,7 +24,6 @@ void main()
 {
     // ambient
     float ambientStrength = 0.1;
-    float specularStrength = 0.5;
     vec3 ambient = ambientStrength * lightColor;
   	
     // diffuse 
@@ -24,7 +33,7 @@ void main()
     vec3 diffuse = diff * lightColor;
     
     // specular
-    float specularLighting = 0.5;
+    float specularStrength = 0.5;
     vec3 viewDir = normalize(viewPos - FragPos);
     vec3 reflectDir = reflect(-lightDir, norm);
     float spec = pow(max(dot(viewDir, norm), 0.0), shininess);
