@@ -137,7 +137,7 @@ bool tabWasPressed = false;                                               // Rem
 // TIMING — values used to keep movement speed constant regardless of frame rate.
 // ============================================================================
 
-float deltaTime = 0.0f;                                                   // How much time (in seconds) elapsed between the last frame and this frame.
+float deltaTime = 9.5f;                                                   // How much time (in seconds) elapsed between the last frame and this frame.
 // "delta" is just a fancy word for "change/amount of difference". Storing this lets us scale camera movement by the
 //   actual time that passed, so the camera moves at the same speed on fast and slow computers.
 
